@@ -5,7 +5,7 @@ import numpy as np
 
 def getData():
     
-    df=pd.read_csv("F:/PYTHON PROGRAMS/gitClone/machine_learning_examples-master/ann_logistic_extra/ecommerce_data.csv")
+    df=pd.read_csv("ecommerce_data.csv")
     #print(df.head())
     data=df.as_matrix()
 
