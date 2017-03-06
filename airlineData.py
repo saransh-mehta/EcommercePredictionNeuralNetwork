@@ -1,7 +1,7 @@
 # airline database
 
 import pandas as pd
-f=pd.read_csv("F:\PYTHON PROGRAMS\gitClone\machine_learning_examples-master\airline\international-airline-passengers.csv", engine="pyhton", skipfooter=3)
+f=pd.read_csv("international-airline-passengers.csv", engine="pyhton", skipfooter=3)
 
 print(f.coloumns)
 
