@@ -12,7 +12,9 @@ x3=np.random.randn(Dno,2) + np.array([-2,-2])  #cloud centerred at -2,-2
 
 x=np.vstack([x1,x2,x3])                   #stacking th 3 arrays vertically one below other (row wise)
 y=np.array([0]*Dno+[1]*Dno+[2]*Dno)       #y=[0,0,...1,1..,2,2..]
+
 #print(y)                               0->x1 1->x2 2->x3 hot-encoding
+
 #plotting the data for viewing
 
 #plt.scatter(x[:,0],x[:,1],)
@@ -39,6 +41,7 @@ def forward(x,w1,b1,w2,b2):
     z=1/(1+np.exp(-x.dot(w1)-b1))
     #plt.scatter(z[:,0],z[:,1])
     #plt.show()
+
     a=z.dot(w2) + b2
 
     #applying softmax to output layer to get probability
@@ -64,8 +67,10 @@ def classificationRate(output,outClassify):  #clas rate can be thought of
                    
 
 result=forward(x,w1,b1,w2,b2)
+
 outClassify=np.argmax(result, axis=1)   #argmax gives the index of max value along the axis
 #print(outClassify)                                        #we do ths as to get max prob is of which class
+
 assert(len(outClassify)==len(result))                                        #n then compare the obtained index 0,1 or 2
                                         #to actual result i.e, y
 print("classification rate is : ",classificationRate(result,outClassify)) #the classifier should give0.33 as equally distributed
